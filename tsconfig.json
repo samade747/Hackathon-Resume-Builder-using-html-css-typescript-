@@ -1,18 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es6", // Adjust the target based on your needs
-    "module": "commonjs", // Or "esnext", "amd", etc. based on your module system
-    "strict": true, // Enables all strict type-checking options
-    "esModuleInterop": true, // For compatibility with CommonJS-style modules
-    "skipLibCheck": true, // Skip type checking of declaration files
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist", // Directory to output compiled files
-    "rootDir": "./assets/ts" // Root directory of your TypeScript files
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "./assets/ts",
+    "rootDir": "./assets/ts",
+    "strict": true,
+    "esModuleInterop": true
   },
-  "include": [
-    "assets/ts/**/*" // Include all TypeScript files in the specified directory
-  ],
-  "exclude": [
-    "node_modules" // Exclude the node_modules directory
-  ]
+  "include": ["assets/ts/**/*"],
+  "exclude": ["node_modules"]
 }
