@@ -2,7 +2,7 @@
   "name": "samadhackathon",
   "version": "1.0.0",
   "scripts": {
-  "build": "npx tsc",
+  "build": "tsc",
   "start": "http-server ."
 },
   "devDependencies": {
