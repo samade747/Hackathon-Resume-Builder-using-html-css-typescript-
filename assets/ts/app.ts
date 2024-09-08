@@ -51,7 +51,7 @@ const fetchValues = <T extends HTMLElement>(attrs: string[], ...nodeLists: NodeL
     for (let i = 0; i < elemsDataCount; i++) {
         const dataObj: Record<string, string> = {};
         for (let j = 0; j < elemsAttrsCount; j++) {
-            dataObj[attrs[j]] = (nodeLists[j][i] as HTMLInputElement).value;
+            dataObj[attrs[j]] = (nodeLists[j][i] as unknown as HTMLInputElement).value;
         }
         tempDataArr.push(dataObj);
     }
@@ -208,10 +208,23 @@ const generateCV = () => {
 }
 
 function previewImage() {
-    const oFReader = new FileReader();
-    oFReader.readAsDataURL(imageElem.files[0]);
-    oFReader.onload = (ofEvent) => {
-        imageDsp.src = (ofEvent.target as FileReader).result as string;
+    // Check if `files` property is not null and contains at least one file
+    if (imageElem.files && imageElem.files.length > 0) {
+        const oFReader = new FileReader();
+        
+        // Read the first file as a data URL
+        oFReader.readAsDataURL(imageElem.files[0]);
+        
+        // Set the image source when file reading is complete
+        oFReader.onload = (ofEvent) => {
+            // Ensure `result` is a string before using it
+            if (typeof (ofEvent.target as FileReader).result === 'string') {
+                imageDsp.src = (ofEvent.target as FileReader).result as string;
+            }
+        };
+    } else {
+        // Handle the case where no file is selected
+        console.error('No file selected or file input element is not available.');
     }
 }
 
