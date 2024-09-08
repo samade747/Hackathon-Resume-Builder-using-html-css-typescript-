@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "./ts",
     "module": "CommonJS",
     "target": "ES6",
     "esModuleInterop": true,
