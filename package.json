@@ -2,8 +2,7 @@
   "name": "samadhackathon",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/app.js"
+    "build": "npx tsc"
   },
   "devDependencies": {
     "http-server": "^14.1.1",
