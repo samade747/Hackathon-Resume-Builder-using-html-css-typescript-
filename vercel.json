@@ -2,5 +2,11 @@
     "rewrites": [
       { "source": "/(.*)", "destination": "/" }
     ],
-    "cleanUrls": true
+    "cleanUrls": true,
+    "build": {
+      "env": {
+        "NODE_VERSION": "18.x"
+      }
+    }
   }
+  
