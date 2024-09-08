@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "module": "CommonJS",
-    "target": "ES6",
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
     "esModuleInterop": true,
-    "strict": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["assets/ts/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
