@@ -4,12 +4,6 @@
         "src": "package.json",
         "use": "@vercel/node"
       }
-    ],
-    "probes": [
-      {
-        "path": "/",
-        "status": 200
-      }
     ]
   }
   
