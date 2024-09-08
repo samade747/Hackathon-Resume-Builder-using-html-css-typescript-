@@ -224,68 +224,97 @@ const getUserInputs = () => {
 };
 
 
+// Function to validate form data based on the type and name of the form element
 function validateFormData(elem: HTMLInputElement | HTMLTextAreaElement, elemType: ValidType, elemName: string) {
+    // Check if the element type is 'text'
     if (elemType === validType.TEXT) {
-        if (!strRegex.test(elem.value) || elem.value.trim().length === 0) addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
+        // Check if the value is not only letters or if it's empty
+        if (!strRegex.test(elem.value) || elem.value.trim().length === 0) 
+            addErrMsg(elem, elemName); // Add an error message if validation fails
+        else 
+            removeErrMsg(elem); // Remove the error message if validation passes
     }
 
+    // Check if the element type is 'text_emp' (text with optional empty)
     if (elemType === validType.TEXT_EMP) {
-        if (!strRegex.test(elem.value)) addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
+        // Check if the value is not only letters (can be empty)
+        if (!strRegex.test(elem.value)) 
+            addErrMsg(elem, elemName); // Add an error message if validation fails
+        else 
+            removeErrMsg(elem); // Remove the error message if validation passes
     }
 
+    // Check if the element type is 'email'
     if (elemType === validType.EMAIL) {
-        if (!emailRegex.test(elem.value) || elem.value.trim().length === 0) addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
+        // Check if the value is a valid email format or if it's empty
+        if (!emailRegex.test(elem.value) || elem.value.trim().length === 0) 
+            addErrMsg(elem, elemName); // Add an error message if validation fails
+        else 
+            removeErrMsg(elem); // Remove the error message if validation passes
     }
 
+    // Check if the element type is 'phoneno' (phone number)
     if (elemType === validType.PHONENO) {
-        if (!phoneRegex.test(elem.value) || elem.value.trim().length === 0) addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
+        // Check if the value matches phone number format or if it's empty
+        if (!phoneRegex.test(elem.value) || elem.value.trim().length === 0) 
+            addErrMsg(elem, elemName); // Add an error message if validation fails
+        else 
+            removeErrMsg(elem); // Remove the error message if validation passes
     }
 
+    // Check if the element type is 'any' (for general validation)
     if (elemType === validType.ANY) {
-        if (elem.value.trim().length === 0) addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
+        // Check if the value is not empty
+        if (elem.value.trim().length === 0) 
+            addErrMsg(elem, elemName); // Add an error message if validation fails
+        else 
+            removeErrMsg(elem); // Remove the error message if validation passes
     }
 }
 
+// Function to add an error message next to the form element
 function addErrMsg(formElem: HTMLInputElement | HTMLTextAreaElement, formElemName: string) {
-    const errorMsg = `${formElemName} is invalid`;
-    const errorElement = formElem.nextElementSibling as HTMLSpanElement;
-    errorElement.innerHTML = errorMsg;
+    const errorMsg = `${formElemName} is invalid`; // Create an error message string
+    const errorElement = formElem.nextElementSibling as HTMLSpanElement; // Find the next sibling element (assumed to be a span) for the error message
+    errorElement.innerHTML = errorMsg; // Set the error message text
 }
 
+// Function to remove the error message from the form element
 function removeErrMsg(formElem: HTMLInputElement | HTMLTextAreaElement) {
-    const errorElement = formElem.nextElementSibling as HTMLSpanElement;
-    errorElement.innerHTML = "";
+    const errorElement = formElem.nextElementSibling as HTMLSpanElement; // Find the next sibling element (assumed to be a span) for the error message
+    errorElement.innerHTML = ""; // Clear the error message text
 }
 
+// Function to display a list of data items in a container
 const showListData = (listData: Record<string, string>[], listContainer: HTMLDivElement) => {
-    listContainer.innerHTML = "";
+    listContainer.innerHTML = ""; // Clear the container content before adding new items
     listData.forEach(listItem => {
-        const itemElem = document.createElement('div');
-        itemElem.classList.add('preview-item');
+        const itemElem = document.createElement('div'); // Create a new div for each list item
+        itemElem.classList.add('preview-item'); // Add a class to the div
         
+        // Loop through each key in the list item object
         for (const key in listItem) {
-            const subItemElem = document.createElement('span');
-            subItemElem.classList.add('preview-item-val');
-            subItemElem.innerHTML = `${listItem[key]}`;
-            itemElem.appendChild(subItemElem);
+            const subItemElem = document.createElement('span'); // Create a new span for each key value
+            subItemElem.classList.add('preview-item-val'); // Add a class to the span
+            subItemElem.innerHTML = `${listItem[key]}`; // Set the text to the value of the key
+            itemElem.appendChild(subItemElem); // Append the span to the item div
         }
 
-        listContainer.appendChild(itemElem);
+        listContainer.appendChild(itemElem); // Append the item div to the container
     });
 }
 
+// Function to display the user's CV on the page
 const displayCV = (userData: any) => {
+    // Set the innerHTML of various display elements with user data
     nameDsp.innerHTML = `${userData.firstname} ${userData.middlename} ${userData.lastname}`;
     phonenoDsp.innerHTML = userData.phoneno;
     emailDsp.innerHTML = userData.email;
     addressDsp.innerHTML = userData.address;
     designationDsp.innerHTML = userData.designation;
     summaryDsp.innerHTML = userData.summary;
+
+    // Use the showListData function to display lists of projects, achievements, skills, educations, and experiences
     showListData(userData.projects, projectsDsp);
     showListData(userData.achievements, achievementsDsp);
     showListData(userData.skills, skillsDsp);
@@ -293,35 +322,36 @@ const displayCV = (userData: any) => {
     showListData(userData.experiences, experiencesDsp);
 }
 
-// generate CV
+// Function to generate the CV by collecting user inputs and displaying the CV
 const generateCV = () => {
-    const userData = getUserInputs();
-    displayCV(userData);
-    console.log(userData);
+    const userData = getUserInputs(); // Get user inputs from the form
+    displayCV(userData); // Display the CV with the collected data
+    console.log(userData); // Log the user data to the console for debugging
 }
 
+// Function to preview an image selected by the user
 function previewImage() {
-    // Check if `files` property is not null and contains at least one file
+    // Check if the file input contains files
     if (imageElem.files && imageElem.files.length > 0) {
-        const oFReader = new FileReader();
+        const oFReader = new FileReader(); // Create a new FileReader instance
         
-        // Read the first file as a data URL
+        // Read the first file as a data URL (base64 encoded image)
         oFReader.readAsDataURL(imageElem.files[0]);
         
-        // Set the image source when file reading is complete
+        // Set the image source when the file reading is complete
         oFReader.onload = (ofEvent) => {
-            // Ensure `result` is a string before using it
+            // Ensure the result is a string (base64 encoded image data)
             if (typeof (ofEvent.target as FileReader).result === 'string') {
-                imageDsp.src = (ofEvent.target as FileReader).result as string;
+                imageDsp.src = (ofEvent.target as FileReader).result as string; // Set the image source to the result
             }
         };
     } else {
         // Handle the case where no file is selected
-        console.error('No file selected or file input element is not available.');
+        console.error('No file selected or file input element is not available.'); // Log an error to the console
     }
 }
 
-// print CV
+// Function to print the CV
 function printCV() {
-    window.print();
+    window.print(); // Trigger the print dialog to print the page
 }
