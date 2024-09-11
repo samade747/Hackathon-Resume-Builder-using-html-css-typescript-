@@ -2,14 +2,16 @@
   "name": "samadhackathon",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc",
     "start": "http-server ."
   },
   "devDependencies": {
-    "http-server": "^14.1.1",
-    "typescript": "^5.5.4"
+    "http-server": "^14.1.1"
   },
   "dependencies": {
     "@types/jquery": "^3.5.30"
-  }
+  },
+  "main": "app.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
