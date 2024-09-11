@@ -2,7 +2,7 @@
   "name": "samadhackathon",
   "version": "1.0.0",
   "scripts": {
-    "start": "http-server ."
+    "start": "http-server"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
@@ -10,7 +10,6 @@
   "dependencies": {
     "@types/jquery": "^3.5.30"
   },
-  "main": "app.js",
   "author": "",
   "license": "ISC",
   "keywords": [],
