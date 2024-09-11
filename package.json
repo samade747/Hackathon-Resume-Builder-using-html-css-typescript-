@@ -2,7 +2,7 @@
   "name": "samadhackathon",
   "version": "1.0.0",
   "scripts": {
-    "start": "http-server"
+    "start": "http-server public"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
