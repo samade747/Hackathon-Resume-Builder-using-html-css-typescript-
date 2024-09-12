@@ -8,7 +8,16 @@
     {
       "src": "resume.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "resume.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "style.css",
+      "use": "@vercel/static"
     }
+
   ],
   "routes": [
     {
@@ -18,6 +27,14 @@
     {
       "src": "/resume.html",
       "dest": "/resume.html"
+    },
+    {
+      "src": "/resume.css",
+      "dest": "/resume.css"
+    },
+    {
+      "src": "/style.css",
+      "dest": "/style.css"
     },
     {
       "src": "/assets/(.*)",
