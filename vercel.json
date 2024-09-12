@@ -20,6 +20,10 @@
     {
       "src": "script.js",
       "use": "@vercel/static"
+    },
+    {
+      "src": "app.js",
+      "use": "@vercel/static"
     }
 
   ],
@@ -43,6 +47,10 @@
     {
       "src": "/script.js",
       "dest": "/script.js"
+    },
+    {
+      "src": "/app.js",
+      "dest": "/app.js"
     },
     {
       "src": "/assets/(.*)",
