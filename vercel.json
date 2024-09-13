@@ -69,6 +69,10 @@
       "dest": "/man.jpg"
     },
     {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
       "src": "/assets/images/man.jpg",
       "dest": "/assets/images/man.jpg"
     },
