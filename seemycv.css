@@ -403,7 +403,7 @@ textarea{
 
 /* Hide the toggle button on larger screens */
 .navbar-toggler-btn {
-    display: none; /* Hidden by default */
+    display: none; 
 }
 
 /* Show the toggle button only on smaller screens */
@@ -416,7 +416,7 @@ textarea{
     }
 
     .navbar-links {
-        display: none; /* Hidden until toggled */
+        display: none; 
     }
 
     .navbar-links.active {
@@ -435,14 +435,14 @@ textarea{
 /* Show links normally on larger screens */
 @media screen and (min-width: 768px) {
     .navbar-links {
-        display: flex; /* Show links in a row for larger screens */
+        display: flex; 
         align-items: center;
         justify-content: flex-end;
         gap: 1rem;
     }
 
     .navbar-toggler-btn {
-        display: none; /* Hide toggle button */
+        display: none; 
     }
 }
 
