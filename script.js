@@ -226,3 +226,11 @@ function previewImage(){
 function printCV(){
     window.print();
 }
+
+
+const navbarToggler = document.getElementById('navbar-toggler');
+const navbarLinks = document.getElementById('navbar-links');
+
+navbarToggler.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active');
+});
