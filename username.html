@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Generator</title>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <h1>Generate CV</h1>
+    <form id="cvForm">
+        <label>Name: <input type="text" id="name" required></label><br>
+        <label>Email: <input type="email" id="email" required></label><br>
+        <label>Experience: <textarea id="experience" required></textarea></label><br>
+        <label>Skills: <textarea id="skills" required></textarea></label><br>
+        <button type="submit">Generate CV</button>
+    </form>
+
+    <div id="result" style="display: none;">
+        <h3>CV Created!</h3>
+        <p>Share this unique link: <a id="shareableLink" href="#"></a></p>
+    </div>
+</body>
+</html>
