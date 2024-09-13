@@ -357,38 +357,51 @@ a{
 
 
 
-
-/* css styling for new links main bar  */
-
-
-/* Styling for the links */
-.navbar-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1rem; /* Space between the links */
+/* Hide the toggle button on larger screens */
+.navbar-toggler-btn {
+    display: none; /* Hidden by default */
 }
 
-/* Make links responsive for mobile screens */
+/* Show the toggle button only on smaller screens */
 @media screen and (max-width: 768px) {
+    .navbar-toggler-btn {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
     .navbar-links {
-        display: none; /* Hide links on mobile */
+        display: none; /* Hidden until toggled */
+    }
+
+    .navbar-links.active {
+        display: flex;
         flex-direction: column;
         position: absolute;
-        top: 80px; /* Adjust to appear below the navbar */
+        top: 80px;
         right: 0;
         background-color: white;
         padding: 1rem;
         box-shadow: rgba(0, 0, 0, 0.08) 0px 3px 8px;
         width: 100%;
     }
+}
 
-    .navbar-links.active {
-        display: flex; /* Show links when toggler is clicked */
+/* Show links normally on larger screens */
+@media screen and (min-width: 768px) {
+    .navbar-links {
+        display: flex; /* Show links in a row for larger screens */
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    .navbar-toggler-btn {
+        display: none; /* Hide toggle button */
     }
 }
 
-/* Style for individual links */
 .navbar-links a {
     text-decoration: none;
     color: var(--clr-dark);

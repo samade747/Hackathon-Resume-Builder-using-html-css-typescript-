@@ -234,3 +234,4 @@ const navbarLinks = document.getElementById('navbar-links');
 navbarToggler.addEventListener('click', () => {
     navbarLinks.classList.toggle('active');
 });
+
