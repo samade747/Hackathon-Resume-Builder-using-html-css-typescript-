@@ -65,7 +65,7 @@
       "dest": "/app.js"
     },
     {
-      "src": "/man.jpg",
+      "src": "/assets/images/man.jpg",
       "dest": "/assets/images/man.jpg"
     },
     {
