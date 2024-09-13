@@ -26,10 +26,6 @@
       "use": "@vercel/static"
     },
     {
-      "src": "man.jpg",
-      "use": "@vercel/static"
-    },
-    {
       "src": "script.js",
       "use": "@vercel/static"
     },
@@ -65,16 +61,16 @@
       "dest": "/app.js"
     },
     {
-      "src": "/man.jpg",
-      "dest": "/man.jpg"
+      "src": "/seemycv.html",
+      "dest": "/eemycv.html"
+    },
+    {
+      "src": "/seemycv.css",
+      "dest": "/eemycv.css"
     },
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
-    },
-    {
-      "src": "/assets/images/man.jpg",
-      "dest": "/assets/images/man.jpg"
     },
     {
       "src": "/(.*)",
