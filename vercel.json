@@ -26,7 +26,7 @@
       "use": "@vercel/static"
     },
     {
-      "src": "man.jpg",
+      "src": "/assets/images/man.jpg",
       "use": "@vercel/static"
     },
     {
