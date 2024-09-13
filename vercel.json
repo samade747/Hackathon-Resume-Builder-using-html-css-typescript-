@@ -10,11 +10,19 @@
       "use": "@vercel/static"
     },
     {
+      "src": "seemycv.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "resume.css",
       "use": "@vercel/static"
     },
     {
       "src": "style.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "seemycv.css",
       "use": "@vercel/static"
     },
     {
