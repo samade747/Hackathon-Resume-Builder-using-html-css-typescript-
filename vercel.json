@@ -26,7 +26,7 @@
       "use": "@vercel/static"
     },
     {
-      "src": "/assets/images/man.jpg",
+      "src": "/man.jpg",
       "use": "@vercel/static"
     },
     {
@@ -65,8 +65,8 @@
       "dest": "/app.js"
     },
     {
-      "src": "/assets/images/man.jpg",
-      "dest": "/assets/images/man.jpg"
+      "src": "/man.jpg",
+      "dest": "/man.jpg"
     },
     {
       "src": "/assets/(.*)",
