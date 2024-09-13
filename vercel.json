@@ -62,11 +62,11 @@
     },
     {
       "src": "/seemycv.html",
-      "dest": "/eemycv.html"
+      "dest": "/seemycv.html"
     },
     {
       "src": "/seemycv.css",
-      "dest": "/eemycv.css"
+      "dest": "/seemycv.css"
     },
     {
       "src": "/assets/(.*)",
