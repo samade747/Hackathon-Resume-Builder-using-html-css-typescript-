@@ -193,6 +193,20 @@ const showListData = (listData, listContainer) => {
     })
 }
 
+const generateShareableLink = (name) => {
+    const baseURL = window.location.href.split('?')[0]; // Get the base URL without query params
+    const uniqueLink = `${baseURL}?username=${encodeURIComponent(name)}`; // Generate link with username as query param
+    const shareLink = document.getElementById('shareLink'); // Link element
+    const shareLinkContainer = document.getElementById('shareLinkContainer'); // Link container
+
+    shareLink.href = uniqueLink; // Set the href of the link
+    shareLink.textContent = uniqueLink; // Display the link text
+    shareLinkContainer.style.display = 'block'; // Show the link container
+};
+
+
+
+
 const displayCV = (userData) => {
     nameDsp.innerHTML = userData.firstname + " " + userData.middlename + " " + userData.lastname;
     phonenoDsp.innerHTML = userData.phoneno;
@@ -211,6 +225,11 @@ const displayCV = (userData) => {
 const generateCV = () => {
     let userData = getUserInputs();
     displayCV(userData);
+    console.log(userData);
+
+    let fullName = `${userData.firstname} ${userData.middlename} ${userData.lastname}`;
+    generateShareableLink(fullName); // Generate the link based on the user's name
+    
     console.log(userData);
 }
 
@@ -234,4 +253,7 @@ const navbarLinks = document.getElementById('navbar-links');
 navbarToggler.addEventListener('click', () => {
     navbarLinks.classList.toggle('active');
 });
+
+
+
 

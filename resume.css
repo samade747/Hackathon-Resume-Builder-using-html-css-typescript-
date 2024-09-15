@@ -30,6 +30,21 @@ a{
     text-decoration: none;
 }
 
+/* color */
+:root{
+    --clr-blue: #1A91F0;
+    --clr-blue-mid: #1170CD;
+    --clr-blue-dark: #1A1C6A;
+    --clr-white: #fff;
+    --clr-bright: #EFF2F9;
+    
+    
+    --font-poppins: 'Poppins', sans-serif;
+    --font-manrope: 'Manrope', sans-serif;;
+    --transition: all 300ms ease-in-out;
+}
+
+/* colors end  */
 
 /* navbar part */
 .navbar{
@@ -468,3 +483,49 @@ textarea{
 
 
 /* FOOTER END  */
+
+
+
+
+
+
+/* buttons */
+.btn{
+    font-size: 14.5px;
+    font-weight: 600;
+    padding: 1.4rem 1.6rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.btn-primary{
+    background-color: var(--clr-blue);
+    color: var(--clr-white);
+    border: 1px solid var(--clr-blue);
+    transition: var(--transition);
+}
+
+.btn-primary:hover{
+    background-color: transparent;
+    color: var(--clr-dark);
+    border-color: var(--clr-grey);
+}
+
+.btn-secondary{
+    background-color: transparent;
+    color: var(--clr-dark);
+    border: 1px solid var(--clr-grey);
+    transition: var(--transition);
+}
+
+.btn-secondary:hover{
+    background-color: var(--clr-blue);
+    color: var(--clr-white);
+    border-color: var(--clr-blue);
+}
+
+.btn-group button:first-child, .btn-group a:first-child{
+    margin-right: 1rem!important;
+}
+
+/* button end  */
